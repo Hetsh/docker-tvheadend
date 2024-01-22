@@ -16,7 +16,7 @@ source libs/docker.sh
 assert_dependency "docker"
 if ! docker version &> /dev/null; then
 	echo "Docker daemon is not running or you have unsufficient permissions!"
-	exit -1
+	exit 1
 fi
 
 IMG_NAME="hetsh/tvheadend"
