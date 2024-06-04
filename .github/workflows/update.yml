@@ -1,0 +1,18 @@
+name: Update Image
+
+on:
+  schedule:
+    - cron:  '42 * * * *'
+
+jobs:
+  Run-Update-Script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-tags: true
+          fetch-depth: 0
+      - run: git config --global user.name "github-actions[bot]"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: ./update.sh --noconfirm
