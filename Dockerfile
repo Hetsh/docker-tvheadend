@@ -1,4 +1,4 @@
-FROM amd64/alpine:20240807
+FROM amd64/alpine:20240923
 RUN apk add --no-cache \
         tvheadend=4.2.8-r8
 
