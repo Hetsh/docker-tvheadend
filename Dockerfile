@@ -1,5 +1,7 @@
 FROM amd64/alpine:20250108
-RUN apk add --no-cache \
+ARG LAST_UPGRADE="2025-10-13T20:17:15+02:00"
+RUN apk upgrade && \
+    apk add --no-cache \
         tvheadend=4.2.8-r8
 
 # App user
