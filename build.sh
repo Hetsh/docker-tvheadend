@@ -75,13 +75,13 @@ case "$TASK" in
 	;;
 	# Build and push tagged image
 	"--upload")
-		if tag_exists "$IMG_NAME"; then
+		find_tags
+		if tags_exist "$IMG_NAME" "${TAGS[@]}"; then
 			echo "Image already exists, no need to upload!"
 			exit 0
 		fi
 
 		build_image
-		find_tags
 		apply_tags
 		for TAG in "${TAGS[@]}"; do
 			docker push "$IMG_NAME:$TAG"
