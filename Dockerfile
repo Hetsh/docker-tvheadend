@@ -1,8 +1,8 @@
 FROM amd64/alpine:20250108
-ARG LAST_UPGRADE="2025-10-15T14:36:33+02:00"
+ARG LAST_UPGRADE="2025-10-22T13:28:59+02:00"
 RUN apk upgrade && \
     apk add --no-cache \
-        tvheadend=4.3_git20250922-r0
+        tvheadend=4.3_git20251018-r0
 
 # App user
 ARG APP_USER="tvheadend"
