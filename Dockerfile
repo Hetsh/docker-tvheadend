@@ -1,5 +1,5 @@
 FROM hetsh/alpine:20260127-9
-ARG LAST_UPGRADE="2026-07-05T15:16:54+02:00"
+ARG LAST_UPGRADE="2026-07-19T09:00:21+02:00"
 RUN apk upgrade --no-cache && \
 	apk add --no-cache \
 		tvheadend=4.3_git20260214-r1
